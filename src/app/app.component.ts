@@ -34,7 +34,6 @@ onSubmit() {
   if(this.form.value.title !=="" && this.form.value.body !=="") {
     console.log(this.form.value)
     this.api.postData(this.form.value).subscribe((response:any)=>{
-      this.responseData.push(response)
       alert("data inserted")
     })
   } else {

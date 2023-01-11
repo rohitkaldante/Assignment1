@@ -1,8 +1,8 @@
 <button (click)="showForm()"><span *ngIf="!formStatus">Add</span><span *ngIf="formStatus">Hide form</span></button>
 <br><br>
-<div *ngIf="formStatus">
+<div *ngIf="formStatus" class="form-style">
   <form [formGroup]="form">
-    <label><b>type value</b></label>
+    <label><b>Title</b></label>
     <input 
     type="text" 
     name="title" 
@@ -11,7 +11,7 @@
     > 
     <br><br>
   
-    <label><b>type body</b></label>
+    <label><b>Body</b></label>
     
     <input 
     type="text" 
@@ -23,7 +23,7 @@
     <button (click)="onSubmit()">submit</button>
   </form>
 </div>
-
+<br><br>
 <table border="1">
   <tr>
     <th>Id</th>
