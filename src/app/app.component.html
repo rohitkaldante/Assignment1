@@ -1,0 +1,39 @@
+<button (click)="showForm()">add detail</button>
+<br><br>
+<div *ngIf="formStatus">
+  <form [formGroup]="form" >
+    <label><b>type value</b></label>
+    <input 
+    type="text" 
+    name="title" 
+    placeholder="type value"
+    formControlName = "title"
+    > 
+    <br><br>
+  
+    <label><b>type body</b></label>
+    
+    <input 
+    type="text" 
+    name="body" 
+    placeholder="type body"
+    formControlName = "body"
+    > 
+    <br> <br>
+    <button (click)="onSubmit()">submit</button>
+  </form>
+</div>
+
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+  <tr *ngFor="let user of responseData">
+      <td> {{user.title}} </td>
+      <td> {{user.body}} </td>
+  </tr>
+
+</table>
+
+
