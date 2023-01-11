@@ -1,7 +1,7 @@
-<button (click)="showForm()">add detail</button>
+<button (click)="showForm()"><span *ngIf="!formStatus">Add</span><span *ngIf="formStatus">Hide form</span></button>
 <br><br>
 <div *ngIf="formStatus">
-  <form [formGroup]="form" >
+  <form [formGroup]="form">
     <label><b>type value</b></label>
     <input 
     type="text" 
@@ -26,10 +26,12 @@
 
 <table border="1">
   <tr>
+    <th>Id</th>
     <th>Title</th>
     <th>Body</th>
   </tr>
   <tr *ngFor="let user of responseData">
+    <td> {{user.id}} </td>
       <td> {{user.title}} </td>
       <td> {{user.body}} </td>
   </tr>

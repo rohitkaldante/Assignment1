@@ -29,15 +29,21 @@ export class AppComponent  implements OnInit {
       })
   }
 
-  
 
 onSubmit() {
-  this.api.postData(this.form.value).subscribe((response:any)=>{
-    this.responseData.push(this.form.value)
-    alert("data inserted")
-  })
+  if(this.form.value.title !=="" && this.form.value.body !=="") {
+    console.log(this.form.value)
+    this.api.postData(this.form.value).subscribe((response:any)=>{
+      this.responseData.push(response)
+      alert("data inserted")
+    })
+  } else {
+    alert("Please enter correct data")
+  }
   
 }
+
+
 showForm() {
   this.formStatus = !this.formStatus;
 }
